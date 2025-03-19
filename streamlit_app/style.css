@@ -1,0 +1,113 @@
+body {
+    color: #f0f0f0;
+    background-color: #262730;
+}
+
+.stApp {
+    background-color: #262730;
+}
+
+.stButton>button {
+    color: #f0f0f0;
+    background-color: #3f404d;
+}
+
+.stButton>button:hover {
+    background-color: #595a69;
+}
+
+.stTextInput>div>div>input {
+    color: #f0f0f0;
+    background-color: #3f404d;
+}
+
+.stTextArea>div>div>textarea {
+    color: #f0f0f0;
+    background-color: #3f404d;
+}
+
+.stSelectbox>div>div>div>div {
+    color: #f0f0f0;
+    background-color: #3f404d;
+}
+
+.stSlider>div>div>div>div {
+    background-color: #595a69;
+}
+
+.stProgress>div>div>div>div {
+    background-color: #595a69;
+}
+
+.stRadio>div>label {
+    color: #f0f0f0;
+}
+
+.stCheckbox>label {
+    color: #f0f0f0;
+}
+
+.stNumberInput>div>div>div>input {
+    color: #f0f0f0;
+    background-color: #3f404d;
+}
+
+.stDateInput>div>div>div>input {
+    color: #f0f0f0;
+    background-color: #3f404d;
+}
+
+.stTimeInput>div>div>div>input {
+    color: #f0f0f0;
+    background-color: #3f404d;
+}
+
+.stFileUploader>div>div>div>button {
+    color: #f0f0f0;
+    background-color: #3f404d;
+}
+
+.stFileUploader>div>div>div>button:hover {
+    background-color: #595a69;
+}
+
+.stFileUploader>div>div>div>div>p {
+    color: #f0f0f0;
+}
+
+.stFileUploader>div>div>div>div>ul>li {
+    color: #f0f0f0;
+}
+
+.stColorPicker>div>div>div>div>input {
+    color: #f0f0f0;
+    background-color: #3f404d;
+}
+
+.stColorPicker>div>div>div>div>div {
+    background-color: #595a69;
+}
+
+.stColorPicker>div>div>div>div>div>div {
+    border-color: #595a69;
+}
+
+.stColorPicker>div>div>div>div>div>div>div {
+    border-color: #595a69;
+}
+
+.stColorPicker>div>div>div>div>div>div>div>div {
+    border-color: #595a69;
+}
+
+.stColorPicker>div>div>div>div>div>div>div>div>div {
+    border-color: #595a69;
+}
+
+.stColorPicker>div>div>div>div>div>div>div>div>div>div {
+    border-color: #595a69;
+}
+
+.stColorPicker>div>div>div>div>div>div>div>div>div>div>div {
+    border-color: #595a69;
+}
