@@ -1,0 +1,11 @@
+streamlit
+numpy
+joblib
+opencv-python
+Pillow
+scikit-learn
+streamlit-drawable-canvas
+matplotlib
+seaborn
+xgboost
+scipy
