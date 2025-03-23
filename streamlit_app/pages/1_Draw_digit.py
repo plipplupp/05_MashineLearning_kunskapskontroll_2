@@ -5,12 +5,12 @@ import cv2
 import time
 from streamlit_drawable_canvas import st_canvas
 
-# #CSS
-# def local_css(file_name):
-#     with open(file_name) as f:
-#         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+#CSS
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-# local_css("pages/style.css")
+local_css("pages/style.css")
 
 # Ladda modellen och scaler
 model = joblib.load('../mnist_random_forest_final_compress5.joblib')
