@@ -13,7 +13,7 @@ def local_css(file_name):
 local_css("style.css")
 
 # Ladda modellen och scaler
-model = joblib.load('../../mnist_random_forest_final_compress5.joblib')
+model = joblib.load('../mnist_random_forest_final_compress5.joblib')
 scaler = joblib.load('../scaler.joblib')
 
 def preprocess_image(image_data, show_images=False):
@@ -77,7 +77,7 @@ def preprocess_image(image_data, show_images=False):
         return image, elapsed_time_preprocess
     return None, None
 
-st.title("Rita en siffra")
+st.title("Draw a digit")
 
 # Skapa en canvas
 canvas_result = st_canvas(
@@ -91,18 +91,18 @@ canvas_result = st_canvas(
     key="canvas",
 )
 
-if st.button("Prediktera"):
-    start_time = time.time()  # Starta tidmätningen
+if st.button("Predict"):
+    start_time = time.time()
     image, elapsed_time_preprocess = preprocess_image(canvas_result.image_data, show_images=False)  # Visa inte bilder under prediktion
     if image is not None:
         prediction = model.predict(image)[0]
-        end_time = time.time()  # Stoppa tidmätningen
-        elapsed_time = end_time - start_time  # Beräkna förfluten tid
-        st.markdown(f"### **Prediktion: {prediction}**")
-        st.write(f"Preprocess-tid: {elapsed_time_preprocess:.4f} sekunder") 
-        st.write(f"Prediktionstid: {elapsed_time:.4f} sekunder")  # Visa tiden
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        st.markdown(f"### **Prediction: {prediction}**")
+        st.write(f"Preprocess time: {elapsed_time_preprocess:.4f} seconds") 
+        st.write(f"Prediction time: {elapsed_time:.4f} seconds")
 
-        st.write("Så här processerades din siffra:")
+        st.write("Here's how your image was processed:")
         preprocess_image(canvas_result.image_data, show_images=True)  # Visa bilder efter prediktion
     else:
         st.write("Rita en siffra först!")

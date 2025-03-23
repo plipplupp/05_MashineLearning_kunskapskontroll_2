@@ -3,24 +3,29 @@ import numpy as np
 import joblib 
 import cv2
 from PIL import Image
+import time
+
 
 # Ladda modellen och scaler
-model = joblib.load('../../mnist_final_voting_classifier_v2.joblib')
+model = joblib.load('../mnist_random_forest_final_compress5.joblib')
 scaler = joblib.load('../scaler.joblib')
 
-def preprocess_image(image_data):
+def preprocess_image(image_data, show_images=True):
     if image_data is not None:
         image = np.array(image_data)
-        st.image(image, caption="Oprocessad bild", use_container_width=True)
+        if show_images:
+            st.image(image, caption="Unprocessed Image", use_container_width=True)
 
         # Konvertera till gråskala
         image = cv2.cvtColor(image, cv2.COLOR_RGBA2GRAY)
-        st.image(image, caption="Gråskala bild", use_container_width=True)
+        if show_images:
+            st.image(image, caption="Grayscale Image", use_container_width=True)
 
         # Medianoskärpa och adaptiv tröskelvärdesättning (första steget)
         image = cv2.medianBlur(image, 5)
         image = cv2.adaptiveThreshold(image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 11, 2)
-        st.image(image, caption="Tröskelbild 1", use_container_width=True)
+        if show_images:
+            st.image(image, caption="Thresholded Image 1", use_container_width=True)
 
         # Konturdetektering och ROI-beskärning
         contours, _ = cv2.findContours(image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
@@ -39,11 +44,13 @@ def preprocess_image(image_data):
             h = min(image.shape[0] - y, h)
             image = image[y:y+h, x:x+w]  # Beskär bilden
 
-        st.image(image, caption="Beskuren bild", use_container_width=True)
+        if show_images:
+            st.image(image, caption="Cropped Image", use_container_width=True)
 
         # Anpassa storlek till 28x28
         image = cv2.resize(image, (28, 28), interpolation=cv2.INTER_AREA)
-        st.image(image, caption="Resized bild", use_container_width=True)
+        if show_images:
+            st.image(image, caption="Resized Image", use_container_width=True)
 
         # Beräkna center of mass och centrera siffran
         moments = cv2.moments(image)
@@ -54,11 +61,13 @@ def preprocess_image(image_data):
             shift_y = 14 - center_y
             shift_matrix = np.float32([[1, 0, shift_x], [0, 1, shift_y]])
             image = cv2.warpAffine(image, shift_matrix, (28, 28), borderValue=0)
-            st.image(image, caption="Centrerad bild", use_container_width=True)
+        if show_images:
+            st.image(image, caption="Centered Image", use_container_width=True)
 
         # Normalisera pixelvärden till [0, 1]
         image = image / 255.0
-        st.image(image, caption="Normaliserad bild", use_container_width=True)
+        if show_images:
+            st.image(image, caption="Normalized Image", use_container_width=True)
 
         # Platta ut och standardisera med StandardScaler
         image = image.ravel().reshape(1, -1)
@@ -67,13 +76,22 @@ def preprocess_image(image_data):
         return image
     return None
 
-st.title("Webbkameraigenkänning")
+st.title("Use the camera to capture a handwritten digit for recognition.")
 
-picture = st.camera_input("Ta en bild")
+picture = st.camera_input("Capture a photo")
 
 if picture:
+    start_time = time.time()
     image = Image.open(picture)
-    processed_image = preprocess_image(image)
+    processed_image = preprocess_image(image, show_images=False)  # Visa inte bilder under prediktion
     if processed_image is not None:
         prediction = model.predict(processed_image)[0]
-        st.write(f"Prediktion: {prediction}")
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        st.markdown(f"### **Prediction: {prediction}**")
+        st.write(f"Prediction time: {elapsed_time:.4f} seconds")
+
+        st.write("Here's how your image was processed:")
+        preprocess_image(image, show_images=True)  # Visa bilder efter prediktion
+    else:
+        st.write("Please capture an image first!")

@@ -13,3 +13,8 @@ st.title("Handwritten Digit Recognition with Machine Learning")
 # Bild på startsidan
 image = Image.open("Cyborg_Machine_Learning.jpg")
 st.image(image, caption="Cyborg Machine Learning", use_container_width=True)
+
+st.write("## **About the App**")
+
+st.write("### This app uses a machine learning model trained on the MNIST dataset to recognize handwritten digits.")
+st.write("### You can choose to draw a digit with the mouse or use the webcam.")

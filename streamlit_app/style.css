@@ -1,113 +1,90 @@
+/* Grundläggande färgtema */
 body {
-    color: #f0f0f0;
-    background-color: #262730;
+    color: #e0e0e0;
+    background: linear-gradient(135deg, #1e1f29, #2a2b38);
 }
 
+/* Streamlit huvudapp */
 .stApp {
-    background-color: #262730;
+    background: transparent;
 }
 
+/* Knappar */
 .stButton>button {
-    color: #f0f0f0;
-    background-color: #3f404d;
+    color: #ffffff;
+    background: linear-gradient(135deg, #3a3b4f, #505161);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: all 0.3s ease-in-out;
+    width: 280px;
 }
 
 .stButton>button:hover {
-    background-color: #595a69;
+    background: linear-gradient(135deg, #505161, #6a6b7e);
+    transform: scale(1.05);
+    color: #00ff00; 
+    font-weight: bold;
 }
 
-.stTextInput>div>div>input {
-    color: #f0f0f0;
-    background-color: #3f404d;
+/* Inmatningsfält */
+.stTextInput>div>div>input,
+.stTextArea>div>div>textarea,
+.stNumberInput>div>div>div>input,
+.stDateInput>div>div>div>input,
+.stTimeInput>div>div>div>input,
+.stColorPicker>div>div>div>div>input {
+    color: #e0e0e0;
+    background-color: #2e2f3a;
+    border: 1px solid #505161;
+    border-radius: 6px;
+    padding: 8px;
 }
 
-.stTextArea>div>div>textarea {
-    color: #f0f0f0;
-    background-color: #3f404d;
+.stTextInput>div>div>input:focus,
+.stTextArea>div>div>textarea:focus,
+.stNumberInput>div>div>div>input:focus,
+.stDateInput>div>div>div>input:focus,
+.stTimeInput>div>div>div>input:focus {
+    border-color: #6a6b7e;
+    outline: none;
 }
 
+/* Dropdown-menyer */
 .stSelectbox>div>div>div>div {
-    color: #f0f0f0;
-    background-color: #3f404d;
+    color: #e0e0e0;
+    background-color: #2e2f3a;
+    border: 1px solid #505161;
+    border-radius: 6px;
 }
 
+/* Slider */
 .stSlider>div>div>div>div {
-    background-color: #595a69;
+    background-color: #6a6b7e;
 }
 
+/* Progress Bar */
 .stProgress>div>div>div>div {
-    background-color: #595a69;
+    background-color: #6a6b7e;
 }
 
-.stRadio>div>label {
-    color: #f0f0f0;
-}
-
+/* Checkbox och radio-knappar */
+.stRadio>div>label,
 .stCheckbox>label {
-    color: #f0f0f0;
+    color: #e0e0e0;
 }
 
-.stNumberInput>div>div>div>input {
-    color: #f0f0f0;
-    background-color: #3f404d;
-}
-
-.stDateInput>div>div>div>input {
-    color: #f0f0f0;
-    background-color: #3f404d;
-}
-
-.stTimeInput>div>div>div>input {
-    color: #f0f0f0;
-    background-color: #3f404d;
-}
-
+/* Filuppladdare */
 .stFileUploader>div>div>div>button {
-    color: #f0f0f0;
-    background-color: #3f404d;
+    color: #ffffff;
+    background: linear-gradient(135deg, #3a3b4f, #505161);
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: all 0.3s ease-in-out;
 }
 
 .stFileUploader>div>div>div>button:hover {
-    background-color: #595a69;
+    background: linear-gradient(135deg, #505161, #6a6b7e);
+    transform: scale(1.05);
 }
 
-.stFileUploader>div>div>div>div>p {
-    color: #f0f0f0;
-}
-
-.stFileUploader>div>div>div>div>ul>li {
-    color: #f0f0f0;
-}
-
-.stColorPicker>div>div>div>div>input {
-    color: #f0f0f0;
-    background-color: #3f404d;
-}
-
-.stColorPicker>div>div>div>div>div {
-    background-color: #595a69;
-}
-
-.stColorPicker>div>div>div>div>div>div {
-    border-color: #595a69;
-}
-
-.stColorPicker>div>div>div>div>div>div>div {
-    border-color: #595a69;
-}
-
-.stColorPicker>div>div>div>div>div>div>div>div {
-    border-color: #595a69;
-}
-
-.stColorPicker>div>div>div>div>div>div>div>div>div {
-    border-color: #595a69;
-}
-
-.stColorPicker>div>div>div>div>div>div>div>div>div>div {
-    border-color: #595a69;
-}
-
-.stColorPicker>div>div>div>div>div>div>div>div>div>div>div {
-    border-color: #595a69;
-}
