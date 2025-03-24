@@ -11,7 +11,7 @@ st.sidebar.success("Select a page above.")
 st.title("Handwritten Digit Recognition with Machine Learning")
 
 # Bild på startsidan
-# image = Image.open("Cyborg_Machine_Learning.jpg")
+# image = Image.open("cyborg.jpg")
 # st.image(image, caption="Cyborg Machine Learning", use_container_width=True)
 
 image_url = "https://drive.google.com/file/d/12SS6EGEOcyh0FpSXzZ_0TISEpXlghMgf/view?usp=drive_link"
