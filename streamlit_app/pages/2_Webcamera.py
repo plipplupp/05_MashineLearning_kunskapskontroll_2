@@ -9,7 +9,7 @@ from PIL import Image
 
 # Ladda modellen och scaler
 model = joblib.load('mnist_random_forest_final_compress5.joblib')
-scaler = joblib.load('../scaler.joblib')
+scaler = joblib.load('scaler.joblib')
 
 def preprocess_image(image_data, show_images=True):
     if image_data is not None:
