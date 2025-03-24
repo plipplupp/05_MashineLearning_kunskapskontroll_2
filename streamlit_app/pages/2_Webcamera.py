@@ -2,8 +2,9 @@ import streamlit as st
 import numpy as np
 import joblib 
 import cv2
-from PIL import Image
+import joblib
 import time
+from PIL import Image
 
 
 # Ladda modellen och scaler
