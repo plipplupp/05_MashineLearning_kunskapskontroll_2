@@ -11,8 +11,8 @@ st.sidebar.success("Select a page above.")
 st.title("Handwritten Digit Recognition with Machine Learning")
 
 # Bild på startsidan
-# image = Image.open("Cyborg_Machine_Learning.jpg")
-# st.image(image, caption="Cyborg Machine Learning", use_container_width=True)
+image = Image.open("Cyborg_Machine_Learning.jpg")
+st.image(image, caption="Cyborg Machine Learning", use_container_width=True)
 
 st.write("## **About the App**")
 
