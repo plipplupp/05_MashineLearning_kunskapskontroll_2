@@ -13,7 +13,7 @@ from streamlit_drawable_canvas import st_canvas
 # local_css("pages/style.css")
 
 # Ladda modellen och scaler
-model = joblib.load('../mnist_random_forest_final_compress5.joblib')
+model = joblib.load('mnist_random_forest_final_compress5.joblib')
 scaler = joblib.load('../scaler.joblib')
 
 def preprocess_image(image_data, show_images=False):
