@@ -16,7 +16,7 @@ try:
     st.image(image, caption="Cyborg Machine Learning", use_container_width=True)
 except FileNotFoundError:
     st.error("Bilden 'Cyborg_Machine_Learning.jpg' kunde inte hittas.")
-    st.write("Kontrollera att bilden finns i rätt mapp och att filnamnet är korrekt.")
+    st.write("Kontrollera att bilden finns i rätt mapppp och att filnamnet är korrekt.")
 except Exception as e:
     st.error(f"Ett oväntat fel uppstod: {e}")
     st.write("Kontrollera Streamlit-loggarna för mer information.")
