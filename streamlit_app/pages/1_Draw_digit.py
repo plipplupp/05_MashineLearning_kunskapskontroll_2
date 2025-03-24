@@ -1,6 +1,5 @@
 import streamlit as st
 import numpy as np
-import joblib
 import cv2
 import time
 from streamlit_drawable_canvas import st_canvas
