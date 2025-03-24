@@ -14,7 +14,7 @@ st.title("Handwritten Digit Recognition with Machine Learning")
 # image = Image.open("cyborg.jpg")
 # st.image(image, caption="Cyborg Machine Learning", use_container_width=True)
 
-image_url = "https://drive.google.com/file/d/12SS6EGEOcyh0FpSXzZ_0TISEpXlghMgf/view?usp=drive_link"
+image_url = "https://drive.google.com/file/d/12SS6EGEOcyh0FpSXzZ_0TISEpXlghMgf/view?download=1"
 st.image(image_url, caption="Cyborg Machine Learning", use_container_width=True)
 
 st.write("## **About the App**")
