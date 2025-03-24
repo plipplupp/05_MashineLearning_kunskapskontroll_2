@@ -12,7 +12,7 @@ st.title("Handwritten Digit Recognition with Machine Learning")
 
 # Bild på startsidan
 try:
-    image = Image.open("Cyborg_Machine_Learning.jpg")
+    image = Image.open("cyborg.jpg")
     st.image(image, caption="Cyborg Machine Learning", use_container_width=True)
 except FileNotFoundError:
     st.error("Bilden 'Cyborg_Machine_Learning.jpg' kunde inte hittas.")
