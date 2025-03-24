@@ -11,11 +11,15 @@ st.sidebar.success("Select a page above.")
 st.title("Handwritten Digit Recognition with Machine Learning")
 
 # Bild på startsidan
-# image = Image.open("cyborg.jpg")
-# st.image(image, caption="Cyborg Machine Learning", use_container_width=True)
-
-image_url = "https://drive.google.com/file/d/12SS6EGEOcyh0FpSXzZ_0TISEpXlghMgf/view?download=1"
-st.image(image_url, caption="Cyborg Machine Learning", use_container_width=True)
+try:
+    image = Image.open("Cyborg_Machine_Learning.jpg")
+    st.image(image, caption="Cyborg Machine Learning", use_container_width=True)
+except FileNotFoundError:
+    st.error("Bilden 'Cyborg_Machine_Learning.jpg' kunde inte hittas.")
+    st.write("Kontrollera att bilden finns i rätt mapp och att filnamnet är korrekt.")
+except Exception as e:
+    st.error(f"Ett oväntat fel uppstod: {e}")
+    st.write("Kontrollera Streamlit-loggarna för mer information.")
 
 st.write("## **About the App**")
 
