@@ -11,8 +11,15 @@ st.sidebar.success("Select a page above.")
 st.title("Handwritten Digit Recognition with Machine Learning")
 
 # Bild på startsidan
-image = Image.open("Cyborg_Machine_Learning.jpg")
-st.image(image, caption="Cyborg Machine Learning", use_container_width=True)
+# image = Image.open("Cyborg_Machine_Learning.jpg")
+# st.image(image, caption="Cyborg Machine Learning", use_container_width=True)
+
+try:
+    with open("Cyborg_Machine_Learning.jpg", "rb") as image_file:
+        image_bytes = image_file.read()
+    st.image(image_bytes, caption="Cyborg Machine Learning", use_container_width=True)
+except FileNotFoundError:
+    st.error("Bilden kunde inte hittas.")
 
 st.write("## **About the App**")
 
