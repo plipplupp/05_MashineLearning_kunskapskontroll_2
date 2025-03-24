@@ -14,12 +14,8 @@ st.title("Handwritten Digit Recognition with Machine Learning")
 # image = Image.open("Cyborg_Machine_Learning.jpg")
 # st.image(image, caption="Cyborg Machine Learning", use_container_width=True)
 
-try:
-    with open("Cyborg_Machine_Learning.jpg", "rb") as image_file:
-        image_bytes = image_file.read()
-    st.image(image_bytes, caption="Cyborg Machine Learning", use_container_width=True)
-except FileNotFoundError:
-    st.error("Bilden kunde inte hittas.")
+image_url = "https://drive.google.com/file/d/12SS6EGEOcyh0FpSXzZ_0TISEpXlghMgf/view?usp=drive_link"
+st.image(image_url, caption="Cyborg Machine Learning", use_container_width=True)
 
 st.write("## **About the App**")
 
